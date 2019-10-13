@@ -17,7 +17,7 @@ private data class Ukedag(val dagen: String) {
     }
 }
 
-class StepDefs {
+class FredagEgenskap {
     private lateinit var ukedag: Ukedag
 
     @Gitt("dagen er søndag")
