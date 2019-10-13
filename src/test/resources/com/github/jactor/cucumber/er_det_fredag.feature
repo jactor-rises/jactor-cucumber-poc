@@ -1,4 +1,5 @@
 # language: no
+#noinspection NonAsciiCharacters
 Egenskap: Er det fredag?
   Alle vil vite når helga starter
 
@@ -18,7 +19,9 @@ Egenskap: Er det fredag?
     Så er svaret "<svar>"
 
     Eksempler:
-      | dag       | svar        |
-      | fredag    | jada, helg  |
-      | søndag    | neida       |
-      | noe annet | neida       |
+      | dag       | svar                |
+      | fredag    | jada, helg          |
+      | søndag    | neida               |
+      | lørdag    | nei, midt i helga   |
+      | onsdag    | snart, lille lørdag |
+      | noe annet | neida               |

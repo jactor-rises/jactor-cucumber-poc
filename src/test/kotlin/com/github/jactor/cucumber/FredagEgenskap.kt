@@ -9,10 +9,11 @@ private data class Ukedag(val dagen: String) {
     internal lateinit var svaret: String
 
     fun erDetFredag() {
-        if (dagen == "fredag") {
-            svaret = "jada, helg"
-        } else {
-            svaret = "neida"
+        svaret = when (dagen) {
+            "fredag" -> "jada, helg"
+            "lørdag" -> "nei, midt i helga"
+            "onsdag" -> "snart, lille lørdag"
+            else -> "neida"
         }
     }
 }
