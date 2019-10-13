@@ -12,7 +12,7 @@ Egenskap: Er det fredag?
     Når jeg spør om det er fredag
     Så er svaret "jada, helg"
 
-  Abstrakt Scenario: <dag> kan være fredag.
+  Abstrakt Scenario: Kan <dag> være fredag.
     Gitt dagen er "<dag>"
     Når jeg spør om det er fredag
     Så er svaret "<svar>"
@@ -20,4 +20,5 @@ Egenskap: Er det fredag?
     Eksempler:
       | dag       | svar        |
       | fredag    | jada, helg  |
+      | søndag    | neida       |
       | noe annet | neida       |

@@ -1,44 +1,47 @@
 package com.github.jactor.cucumber
 
 import io.cucumber.java.no.Gitt
-import io.cucumber.java.no.Så
 import io.cucumber.java.no.Når
+import io.cucumber.java.no.Så
 import org.assertj.core.api.Assertions.assertThat
 
-fun erDetFredag(dagen: String): String {
-    if (dagen == "fredag") {
-        return "jada, helg"
-    }
+private data class Ukedag(val dagen: String) {
+    internal lateinit var svaret: String
 
-    return "neida"
+    fun erDetFredag() {
+        if (dagen == "fredag") {
+            svaret = "jada, helg"
+        } else {
+            svaret = "neida"
+        }
+    }
 }
 
 class StepDefs {
-    private lateinit var dagen: String
-    private lateinit var svaret: String
+    private lateinit var ukedag: Ukedag
 
     @Gitt("dagen er søndag")
     fun `dagen er sondag`() {
-        dagen = "søndag"
+        ukedag = Ukedag("søndag")
     }
 
     @Gitt("dagen er fredag")
     fun `dagen er fredag`() {
-        dagen = "fredag"
+        ukedag = Ukedag("fredag")
     }
 
     @Gitt("dagen er {string}")
     fun `dagen er`(dagen: String) {
-        this.dagen = dagen
+        this.ukedag = Ukedag(dagen)
     }
 
     @Når("jeg spør om det er fredag")
     fun `jeg spor om det er fredag`() {
-        svaret = erDetFredag(dagen)
+        ukedag.erDetFredag()
     }
 
     @Så("er svaret {string}")
     fun `er svaret`(svaret: String) {
-        assertThat(svaret).isEqualTo(svaret)
+        assertThat(ukedag.svaret).isEqualTo(svaret)
     }
 }
