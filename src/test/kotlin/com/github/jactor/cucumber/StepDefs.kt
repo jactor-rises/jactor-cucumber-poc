@@ -1,44 +1,44 @@
 package com.github.jactor.cucumber
 
-import io.cucumber.java.en.Given
-import io.cucumber.java.en.Then
-import io.cucumber.java.en.When
+import io.cucumber.java.no.Gitt
+import io.cucumber.java.no.Så
+import io.cucumber.java.no.Når
 import org.assertj.core.api.Assertions.assertThat
 
-fun isItFriday(today: String): String {
-    if (today == "Friday") {
-        return "TGIF"
+fun erDetFredag(dagen: String): String {
+    if (dagen == "fredag") {
+        return "jada, helg"
     }
 
-    return "Nope"
+    return "neida"
 }
 
 class StepDefs {
-    private lateinit var today: String
-    private lateinit var actualAnswer: String
+    private lateinit var dagen: String
+    private lateinit var svaret: String
 
-    @Given("today is Sunday")
-    fun today_is_Sunday() {
-        today = "Sunday"
+    @Gitt("dagen er søndag")
+    fun `dagen er sondag`() {
+        dagen = "søndag"
     }
 
-    @Given("today is Friday")
-    fun today_is_Friday() {
-        today = "Friday"
+    @Gitt("dagen er fredag")
+    fun `dagen er fredag`() {
+        dagen = "fredag"
     }
 
-    @Given("today is {string}")
-    fun today_is(today: String) {
-        this.today = today
+    @Gitt("dagen er {string}")
+    fun `dagen er`(dagen: String) {
+        this.dagen = dagen
     }
 
-    @When("I ask whether it's Friday yet")
-    fun i_ask_whether_it_s_Friday_yet() {
-        actualAnswer = isItFriday(today)
+    @Når("jeg spør om det er fredag")
+    fun `jeg spor om det er fredag`() {
+        svaret = erDetFredag(dagen)
     }
 
-    @Then("I should be told {string}")
-    fun i_should_be_told(answer: String) {
-        assertThat(actualAnswer).isEqualTo(answer)
+    @Så("er svaret {string}")
+    fun `er svaret`(svaret: String) {
+        assertThat(svaret).isEqualTo(svaret)
     }
 }

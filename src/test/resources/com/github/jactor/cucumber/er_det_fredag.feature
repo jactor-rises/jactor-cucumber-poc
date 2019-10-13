@@ -1,23 +1,23 @@
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
+# language: no
+Egenskap: Er det fredag?
+  Alle vil vite når helga starter
 
-  Scenario: Sunday isn't Friday
-    Given today is Sunday
-    When I ask whether it's Friday yet
-    Then I should be told "Nope"
+  Scenario: Søndag er ikke fredag
+    Gitt dagen er søndag
+    Når jeg spør om det er fredag
+    Så er svaret "neida"
 
-  Scenario: Friday is Friday
-    Given today is Friday
-    When I ask whether it's Friday yet
-    Then I should be told "TGIF"
+  Scenario: Fredag er fredag
+    Gitt dagen er fredag
+    Når jeg spør om det er fredag
+    Så er svaret "jada, helg"
 
-  Scenario Outline: Today is or is not Friday
-    Given today is "<day>"
-    When I ask whether it's Friday yet
-    Then I should be told "<answer>"
+  Abstrakt Scenario: <dag> kan være fredag.
+    Gitt dagen er "<dag>"
+    Når jeg spør om det er fredag
+    Så er svaret "<svar>"
 
-    Examples:
-      | day            | answer |
-      | Friday         | TGIF   |
-      | Sunday         | Nope   |
-      | anything else! | Nope   |
+    Eksempler:
+      | dag       | svar        |
+      | fredag    | jada, helg  |
+      | noe annet | neida       |
