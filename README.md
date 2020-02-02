@@ -6,4 +6,4 @@ Code based on tutorial: <https://cucumber.netlify.com/docs/guides/10-minute-tuto
 
 ## Norsk versjon
 
-Dette eksempelet er basert på noske `gherkin`-filer (*.feature) for BDD (Behaviour driven development).
+Dette eksempelet er basert på norske `gherkin`-filer (*.feature) for BDD (Behaviour driven development).
